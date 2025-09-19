@@ -10,36 +10,15 @@
   <div class="container">
     <h1>Unit Converter</h1>
 
+    <div class="type-buttons">
+      <button id="weightBtn" class="type-btn active">Weight</button>
+      <button id="lengthBtn" class="type-btn">Length</button>
+      <button id="volumeBtn" class="type-btn">Volume</button>
+    </div>
+
     <div class="input-section">
       <input type="number" id="inputValue" placeholder="Enter a number">
-      <select id="unitSelect">
-        <optgroup label="Weight">
-          <option value="lbs">lbs</option>
-          <option value="kg">kg</option>
-        </optgroup>
-        <optgroup label="Length">
-          <option value="ft">feet</option>
-          <option value="in">inches</option>
-          <option value="yd">yards</option>
-          <option value="mi">miles</option>
-          <option value="m">meters</option>
-          <option value="cm">cm</option>
-          <option value="mm">mm</option>
-          <option value="km">km</option>
-        </optgroup>
-        <optgroup label="Volume">
-          <option value="m3">cubic meters</option>
-          <option value="ml">milliliters</option>
-          <option value="floz">fl oz</option>
-          <option value="ft3">cubic feet</option>
-          <option value="cup">cup</option>
-          <option value="gal">gallon</option>
-          <option value="qt">quart</option>
-          <option value="pt">pint</option>
-          <option value="tbsp">tablespoon</option>
-          <option value="tsp">teaspoon</option>
-        </optgroup>
-      </select>
+      <select id="unitSelect"></select>
     </div>
 
     <table id="resultsTable">
@@ -47,7 +26,7 @@
         <tr><th>Unit</th><th>Value</th></tr>
       </thead>
       <tbody>
-        <!-- Converted values will appear here -->
+        <!-- Converted values appear here -->
       </tbody>
     </table>
   </div>

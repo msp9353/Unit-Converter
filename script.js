@@ -1,6 +1,7 @@
-const weightUnits = ["lbs","kg","g","mg","oz"];
-const lengthUnits = ["ft","in","yd","mi","m","cm","mm","km"];
-const volumeUnits = ["m3","ml","floz","ft3","cup","gal","qt","pt","tbsp","tsp"];
+// Unit arrays with full names
+const weightUnits = ["pounds","kilograms","grams","milligrams","ounces"];
+const lengthUnits = ["feet","inches","yards","miles","meters","centimeters","millimeters","kilometers"];
+const volumeUnits = ["cubic meters","milliliters","fluid ounces","cubic feet","cups","gallons","quarts","pints","tablespoons","teaspoons"];
 
 const unitSelect = document.getElementById("unitSelect");
 const input = document.getElementById("inputValue");
@@ -40,77 +41,75 @@ function convert(value, unit) {
   let results = {};
 
   // Weight
-  if (["lbs","kg","g","mg","oz"].includes(unit)) {
-    const lbsToKg = 0.453592;
-    const kgToLbs = 1 / lbsToKg;
+  if (weightUnits.includes(unit)) {
     let valueInKg;
     switch(unit){
-      case "lbs": valueInKg = value * lbsToKg; break;
-      case "kg": valueInKg = value; break;
-      case "g": valueInKg = value / 1000; break;
-      case "mg": valueInKg = value / 1e6; break;
-      case "oz": valueInKg = value * 0.0283495; break;
+      case "pounds": valueInKg = value * 0.453592; break;
+      case "kilograms": valueInKg = value; break;
+      case "grams": valueInKg = value / 1000; break;
+      case "milligrams": valueInKg = value / 1e6; break;
+      case "ounces": valueInKg = value * 0.0283495; break;
     }
     results = {
-      kg: valueInKg,
-      g: valueInKg*1000,
-      mg: valueInKg*1e6,
-      lbs: valueInKg*kgToLbs,
-      oz: valueInKg*35.274
+      "kilograms": valueInKg,
+      "grams": valueInKg*1000,
+      "milligrams": valueInKg*1e6,
+      "pounds": valueInKg*(1/0.453592),
+      "ounces": valueInKg*35.274
     };
   }
 
   // Length
-  if (["ft","in","yd","mi","m","cm","mm","km"].includes(unit)) {
+  if (lengthUnits.includes(unit)) {
     let valueInM;
     switch(unit){
-      case "ft": valueInM = value*0.3048; break;
-      case "in": valueInM = value*0.0254; break;
-      case "yd": valueInM = value*0.9144; break;
-      case "mi": valueInM = value*1609.34; break;
-      case "m": valueInM = value; break;
-      case "cm": valueInM = value/100; break;
-      case "mm": valueInM = value/1000; break;
-      case "km": valueInM = value*1000; break;
+      case "feet": valueInM = value*0.3048; break;
+      case "inches": valueInM = value*0.0254; break;
+      case "yards": valueInM = value*0.9144; break;
+      case "miles": valueInM = value*1609.34; break;
+      case "meters": valueInM = value; break;
+      case "centimeters": valueInM = value/100; break;
+      case "millimeters": valueInM = value/1000; break;
+      case "kilometers": valueInM = value*1000; break;
     }
     results = {
-      ft: valueInM/0.3048,
-      in: valueInM/0.0254,
-      yd: valueInM/0.9144,
-      mi: valueInM/1609.34,
-      m: valueInM,
-      cm: valueInM*100,
-      mm: valueInM*1000,
-      km: valueInM/1000
+      "feet": valueInM/0.3048,
+      "inches": valueInM/0.0254,
+      "yards": valueInM/0.9144,
+      "miles": valueInM/1609.34,
+      "meters": valueInM,
+      "centimeters": valueInM*100,
+      "millimeters": valueInM*1000,
+      "kilometers": valueInM/1000
     };
   }
 
   // Volume
-  if (["m3","ml","floz","ft3","cup","gal","qt","pt","tbsp","tsp"].includes(unit)) {
+  if (volumeUnits.includes(unit)) {
     let valueInM3;
     switch(unit){
-      case "m3": valueInM3 = value; break;
-      case "ml": valueInM3 = value/1e6; break;
-      case "floz": valueInM3 = value*2.9574e-5; break;
-      case "ft3": valueInM3 = value*0.0283168; break;
-      case "cup": valueInM3 = value*0.000236588; break;
-      case "gal": valueInM3 = value*0.00378541; break;
-      case "qt": valueInM3 = value*0.000946353; break;
-      case "pt": valueInM3 = value*0.000473176; break;
-      case "tbsp": valueInM3 = value*1.47868e-5; break;
-      case "tsp": valueInM3 = value*4.92892e-6; break;
+      case "cubic meters": valueInM3 = value; break;
+      case "milliliters": valueInM3 = value/1e6; break;
+      case "fluid ounces": valueInM3 = value*2.9574e-5; break;
+      case "cubic feet": valueInM3 = value*0.0283168; break;
+      case "cups": valueInM3 = value*0.000236588; break;
+      case "gallons": valueInM3 = value*0.00378541; break;
+      case "quarts": valueInM3 = value*0.000946353; break;
+      case "pints": valueInM3 = value*0.000473176; break;
+      case "tablespoons": valueInM3 = value*1.47868e-5; break;
+      case "teaspoons": valueInM3 = value*4.92892e-6; break;
     }
     results = {
-      m3: valueInM3,
-      ml: valueInM3*1e6,
-      floz: valueInM3/2.9574e-5,
-      ft3: valueInM3/0.0283168,
-      cup: valueInM3/0.000236588,
-      gal: valueInM3/0.00378541,
-      qt: valueInM3/0.000946353,
-      pt: valueInM3/0.000473176,
-      tbsp: valueInM3/1.47868e-5,
-      tsp: valueInM3/4.92892e-6
+      "cubic meters": valueInM3,
+      "milliliters": valueInM3*1e6,
+      "fluid ounces": valueInM3/2.9574e-5,
+      "cubic feet": valueInM3/0.0283168,
+      "cups": valueInM3/0.000236588,
+      "gallons": valueInM3/0.00378541,
+      "quarts": valueInM3/0.000946353,
+      "pints": valueInM3/0.000473176,
+      "tablespoons": valueInM3/1.47868e-5,
+      "teaspoons": valueInM3/4.92892e-6
     };
   }
 

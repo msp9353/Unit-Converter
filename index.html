@@ -10,17 +10,20 @@
   <div class="container">
     <h1>Unit Converter</h1>
 
+    <!-- Type buttons -->
     <div class="type-buttons">
       <button id="weightBtn" class="type-btn active">Weight</button>
       <button id="lengthBtn" class="type-btn">Length</button>
       <button id="volumeBtn" class="type-btn">Volume</button>
     </div>
 
+    <!-- Input section -->
     <div class="input-section">
-      <input type="number" id="inputValue" placeholder="Enter a number">
+      <input type="text" inputmode="decimal" pattern="[0-9]*[.,]?[0-9]*" id="inputValue" placeholder="Enter a number">
       <select id="unitSelect"></select>
     </div>
 
+    <!-- Results table -->
     <table id="resultsTable">
       <thead>
         <tr><th>Unit</th><th>Value</th></tr>

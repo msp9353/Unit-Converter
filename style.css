@@ -11,6 +11,32 @@ body {
   text-align: center;
 }
 
+h1 {
+  margin-bottom: 20px;
+}
+
+.type-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.type-btn {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 1px solid #1f3a93;
+  background-color: #ffffff;
+  color: #1f3a93;
+  border-radius: 6px;
+}
+
+.type-btn.active {
+  background-color: #1f3a93;
+  color: #ffffff;
+}
+
 .input-section {
   display: flex;
   justify-content: center;

@@ -132,7 +132,7 @@ function updateTable() {
     const unitCell = document.createElement("td");
     unitCell.textContent = key;
     const valCell = document.createElement("td");
-    valCell.textContent = val.toFixed(4);
+    valCell.textContent = val.toLocaleString(undefined, {maximumFractionDigits: 2});
 
     row.appendChild(unitCell);
     row.appendChild(valCell);

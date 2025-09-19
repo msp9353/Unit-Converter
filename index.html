@@ -1,39 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Unit Converter</title>
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Browser tab icon -->
+  <link rel="icon" href="scale_icon.png" type="image/png">
+
+  <!-- iOS / iPad home screen icon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="scale_icon.png">
+
+  <!-- Android home screen (Chrome) -->
+  <link rel="shortcut icon" sizes="192x192" href="scale_icon.png">
 </head>
 <body>
   <div class="container">
     <h1>Unit Converter</h1>
 
-    <!-- Type buttons -->
     <div class="type-buttons">
       <button id="weightBtn" class="type-btn active">Weight</button>
       <button id="lengthBtn" class="type-btn">Length</button>
       <button id="volumeBtn" class="type-btn">Volume</button>
     </div>
 
-    <!-- Input section -->
-    <div class="input-section">
-      <input type="text" inputmode="decimal" pattern="[0-9]*[.,]?[0-9]*" id="inputValue" placeholder="Enter a number">
+    <div class="input-row">
+      <input type="number" step="any" id="inputValue" placeholder="Enter value" inputmode="decimal">
       <select id="unitSelect"></select>
     </div>
 
-    <!-- Results table -->
     <table id="resultsTable">
       <thead>
-        <tr><th>Unit</th><th>Value</th></tr>
+        <tr>
+          <th>Unit</th>
+          <th>Value</th>
+        </tr>
       </thead>
-      <tbody>
-        <!-- Converted values appear here -->
-      </tbody>
+      <tbody></tbody>
     </table>
   </div>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
